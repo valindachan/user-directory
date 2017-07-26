@@ -62,7 +62,7 @@ p.work {
   background-color: #225489;
 }
 .profile:hover p.no-work {
-  color: #e26e6c;
+  color: #f1b9b8;
 }
 .profile:hover p.name,
 .profile:hover p.work {
@@ -107,10 +107,10 @@ p.work {
 }
 .title {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   padding-right: 30px;
   width: 150px;
-  align-items: flex-end;
+  justify-content: flex-end;
   font-weight: 700;
 }
 .col {
@@ -119,8 +119,6 @@ p.work {
   padding-right: 10px;
 }
 .info {
-  display: flex;
-  flex-direction: column;
   padding: 0 10px 0 20px;
 }
 ul {

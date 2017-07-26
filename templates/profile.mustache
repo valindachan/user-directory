@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>User Profile</title>
     <link href="../style.css" rel="stylesheet">
+    <link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css">
   </head>
   <body>
     <div class="profile-details">
@@ -17,12 +18,12 @@
           <h1>{{name}}</h1>
           <ul>
             <li>
-              {{#address.city}}{{address.city}},{{/address.city}} {{address.country}}
-              {{#job}}| {{job}},{{/job}} {{#company}}{{company}}{{/company}}
-              {{^job}}| <p class="no-work">Available for hire</p>{{/job}}
+              <i class="fa fa-map-marker" aria-hidden="true"></i> {{#address.city}} {{address.city}},{{/address.city}} {{address.country}}
+              {{#job}}| <i class="fa fa-briefcase" aria-hidden="true"></i> {{job}},{{/job}} {{#company}}{{company}}{{/company}}
+              {{^job}}| <p class="no-work"><i class="fa fa-briefcase" aria-hidden="true"></i> Available for hire</p>{{/job}}
             </li>
             <li>
-              {{#email}}<a href="mailto:{{email}}?Subject=Hello%20{{name}}" target="_top">{{email}}</a> |{{/email}}  {{phone}}
+              {{#email}}<i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:{{email}}?Subject=Hello%20{{name}}" target="_top"> {{email}}</a> |{{/email}} <i class="fa fa-phone" aria-hidden="true"></i> {{phone}}
             </li>
           </ul>
         </div>
@@ -31,23 +32,25 @@
         {{#university}}
           <div class="row">
             <div class="title">
-              Education
+              <p><i class="fa fa-graduation-cap" aria-hidden="true"></i> Education</p>
             </div>
             <div class="info">
-              {{university}}
+              <p>{{university}}</p>
             </div>
           </div>
         {{/university}}
         <div class="row">
           <div class="title">
-            Skills
+            <p><i class="fa fa-wrench" aria-hidden="true"></i> Skills</p>
           </div>
           <div class="info">
-            {{#skills}}
-              <ul>
-                <li>{{.}}</li>
-              </ul>
-            {{/skills}}
+            <p>
+              {{#skills}}
+                <ul>
+                  <li>{{.}}</li>
+                </ul>
+              {{/skills}}
+            </p>
           </div>
         </div>
     </div>
