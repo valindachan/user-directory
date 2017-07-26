@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>User Directory</title>
+    <link href="../style.css" rel="stylesheet">
+  </head>
+  <body>
+
+
+    <div class="profile-details">
+      <div class="row">
+        <div class="col">
+          <img src="{{avatar}}" class="circle">
+        </div>
+        <div class="col">
+          <h1>{{name}}</h1>
+          <ul>
+            <li>
+              {{#address.city}}{{address.city}},{{/address.city}} {{address.country}}
+              {{#job}}| {{job}},{{/job}} {{#company}}{{company}}{{/company}}
+              {{^job}}| <p class="no-work">Available for hire</p>{{/job}}
+            </li>
+            <li>
+              {{#email}}<a href="mailto:{{email}}?Subject=Hello%20{{name}}" target="_top">{{email}}</a> |{{/email}}  {{phone}}
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        {{#university}}
+          <div class="row">
+            <div class="title">
+              Education
+            </div>
+            <div class="info">
+              {{university}}
+            </div>
+          </div>
+        {{/university}}
+        <div class="row">
+          <div class="title">
+            Skills
+          </div>
+          <div class="info">
+            {{#skills}}
+              <ul>
+                <li>{{.}}</li>
+              </ul>
+            {{/skills}}
+          </div>
+        </div>
+    </div>
+
+    <div class="footer">
+      <a href="/">« Back to directory</a>
+    </div>
+
+
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+<!-- Latest compiled and minified JavaScript -->

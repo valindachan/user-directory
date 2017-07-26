@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css?family=Coming+Soon');
+
+body {
+  font-family: 'Coming Soon', cursive;
+  margin: 40px;
+  background-color: #edeaea;
+  color: #53565a;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-size: 22px;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.profile {
+  background: #fff;
+  width: 200px;
+  margin: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.circle {
+  border-radius: 50%;
+  margin: 0 20px 20px;
+}
+h1 {
+  padding: 0;
+  margin: 15px 0 0;
+}
+a:link {
+  text-decoration: none;
+}
+p.name {
+  color: #3b7ac6;
+  text-decoration: none;
+  font-size: 1.2em;
+  font-family: 'Coming Soon', cursive;
+  text-align: center;
+}
+p.work {
+  color: #53565a;
+  text-decoration: none;
+  font-size: .8em;
+  text-align: center;
+}
+.profile p.no-work,
+.profile p.no-work:link,
+.profile p.no-work:visited {
+  color: #9e1512;
+  text-decoration: none;
+  font-size: .8em;
+  text-align: center;
+}
+.profile:hover {
+  background-color: #225489;
+}
+.profile:hover p.no-work {
+  color: #e26e6c;
+}
+.profile:hover p.name,
+.profile:hover p.work {
+  color: #fff;
+}
+.profile-details {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  padding: 20px 50px 50px 50px;
+}
+.profile-details a:link,
+.profile-details a:visited {
+  color: #3b7ac6;
+  text-decoration: none;
+}
+.profile-details a:hover {
+  color: #225489;
+}
+.profile-details p.no-work {
+  color: #9e1512;
+  text-align: left;
+  display: inline;
+}
+.primary {
+  display: flex;
+  flex-direction: row;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  margin: 25px 0 0;
+}
+.circle {
+  border-radius: 50%;
+  margin: 0 20px 20px;
+  -webkit-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+.title {
+  display: flex;
+  flex-direction: column;
+  padding-right: 30px;
+  width: 150px;
+  align-items: flex-end;
+  font-weight: 700;
+}
+.col {
+  display: flex;
+  flex-direction: column;
+  padding-right: 10px;
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px 0 20px;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.footer {
+  margin-top: 80px;
+}
