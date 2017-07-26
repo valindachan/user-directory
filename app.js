@@ -7,7 +7,7 @@ const app = express()
 app.use(express.static("public"))
 
 app.engine("mustache", mustacheExpress())
-app.set("views", "./views")
+app.set("views", "./templates")
 app.set("view engine", "mustache")
 
 app.get("/", (req, res) => {
