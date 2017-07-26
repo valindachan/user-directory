@@ -14,10 +14,8 @@ app.get("/", (req, res) => {
   res.render("home", data)
 })
 
-app.use(express.static("public"))
 app.get("/profile/:id", (req, res) => {
   const userDetails = data.users[req.params.id - 1]
-  // console.log(userDetails)
   res.render("profile", userDetails)
 })
 
