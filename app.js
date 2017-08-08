@@ -58,6 +58,9 @@ app.get("/profile/:id", (req, res) => {
       // Render a template
       res.render("profile", robots)
     })
+    .catch(err => {
+      res.render("error")
+    })
 
   // const userDetails = data.users[req.params.id - 1]
   // res.render("profile", userDetails)
