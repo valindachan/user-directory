@@ -44,7 +44,8 @@ p.name {
   font-family: 'Coming Soon', cursive;
   text-align: center;
 }
-p.work {
+p.work:link,
+p.work:visited {
   color: #53565a;
   text-decoration: none;
   font-size: .8em;
