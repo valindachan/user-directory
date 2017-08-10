@@ -1,6 +1,6 @@
 const express = require("express")
 const mustacheExpress = require("mustache-express")
-// const data = require("./data")
+const bodyParser = require("body-parser")
 const pgPromise = require("pg-promise")()
 const pg = require("pg")
 
@@ -11,6 +11,9 @@ app.use(express.static("public"))
 app.engine("mustache", mustacheExpress())
 app.set("views", "./templates")
 app.set("view engine", "mustache")
+
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: false }))
 
 /*
   CREATE TABLE robots ()=
@@ -46,12 +49,40 @@ app.get("/", (req, res) => {
   })
 })
 
-app.get("/profile/:id", (req, res) => {
-  // const id = req.params.id - 1
-  const id = req.params.id
+app.get("/add", (req, res) => {
+  res.render("add")
+})
+
+app.post("/add", (req, res) => {
+  let newRobot = req.body
   database
-    .one("SELECT * FROM robots WHERE id = $(id)", {
-      id: id
+    .one(
+      `INSERT INTO "robots" (username, name, avatar, email, job, company, phone, address, university, skills)
+             VALUES($(username), $(name), $(avatar), $(email), $(job), $(company), $(phone), $(address), $(university), $(skills)) RETURNING id`,
+      newRobot
+    )
+    .then(newRobot => {
+      res.render("add-confirmation")
+    })
+})
+
+app.post("/delete/:username", (req, res) => {
+  const username = req.params.username
+  database
+    .one('DELETE FROM "robots" WHERE username = $(username) RETURNING id', {
+      username: username
+    })
+    .then(username => {
+      res.render("delete-confirmation")
+    })
+})
+
+app.get("/profile/:username", (req, res) => {
+  // const id = req.params.id - 1
+  const username = req.params.username
+  database
+    .one("SELECT * FROM robots WHERE username = $(username)", {
+      username: username
     })
     // Bring back its details!
     .then(robots => {

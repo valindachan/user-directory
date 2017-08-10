@@ -29,6 +29,8 @@ body {
 .circle {
   border-radius: 50%;
   margin: 0 20px 20px;
+  width: 150px;
+  height: 150px;
 }
 h1 {
   padding: 0;
@@ -69,13 +71,42 @@ p.work:visited {
 .profile:hover p.work {
   color: #fff;
 }
-.profile-details {
+.profile-details,
+.add {
   display: flex;
   flex-direction: column;
   background: #fff;
   padding: 20px 50px 50px 50px;
   min-width: 100vh;
   min-height: 70vh;
+}
+.add {
+  display: flex;
+  justify-content: space-around;
+  padding: 50px;
+}
+.add form {
+  display: flex;
+  flex-direction: column;
+}
+.add form input {
+  font-size: .7em;
+  padding: .5em;
+  margin-bottom: 1.2em;
+}
+.add form button,
+.modify-btn form button {
+  color: #fff;
+  font-size: .8em;
+  padding: .8em;
+  margin-top: 2em;
+  border: 1px solid #3b7ac6;
+  background: #3b7ac6;
+}
+.add form button:hover,
+.modify-btn form button:hover {
+  border: 1px solid #225489;
+  background: #225489;
 }
 .profile-details a:link,
 .profile-details a:visited {

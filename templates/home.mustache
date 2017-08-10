@@ -13,13 +13,13 @@
     <div class="container">
       {{#users}}
         <div class="profile">
-          <a href="/profile/{{id}}">
+          <a href="/profile/{{username}}">
             <img src="{{avatar}}" class="circle">
           </a>
-          <a href="/profile/{{id}}">
+          <a href="/profile/{{username}}">
             <p class="name">{{name}}</p>
           </a>
-          <a href="/profile/{{id}}">
+          <a href="/profile/{{username}}">
             {{#job}}<p class="work">{{job}},{{/job}} {{#company}}{{company}}</p>{{/company}}
             {{^job}}<p class="no-work">Available for hire</p>{{/job}}
           </a>
@@ -27,8 +27,11 @@
       {{/users}}
     </div>
 
-
-
+    <div class="modify-btn">
+      <form action="/add" method="get">
+        <button type="submit"><i class="fa fa-plus" aria-hidden="true"></i> Add Robot</button>
+      </form>
+    </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
